@@ -8,8 +8,18 @@ public class AnalyzeMoodTest
     public void givenSadInMessage_returnSad()
     {
         String message = "I am in sad mood";
+        String expectedWord = "sad";
         String returned = MoodAnalyzer.analyzer(message);
-        Assert.assertEquals("sad",returned);
+        Assert.assertEquals(expectedWord,returned);
+    }
+
+    @Test
+    public void givenHappyInMessage_returnHappy()
+    {
+        String message = "I am in any mood";
+        String expectedWord = "happy";
+        String returned = MoodAnalyzer.analyzer(message);
+        Assert.assertEquals(expectedWord,returned);
     }
 
 }
