@@ -1,18 +1,24 @@
 public class MoodAnalyzer {
 
     public static void main(String[] args) {
-        analyzer("I is not in any mood");
+        if ( (analyzer("I is not in any mood")).equals("sad") )
+        {
+            System.out.println("Sad");
+        }else
+        {
+            System.out.println("happy");
+        }
     }
 
-    public static void analyzer(String message)
+    public static String analyzer(String message)
     {
         String sadWord = "sad";
         if( message.toLowerCase().contains(sadWord) )
         {
-            System.out.println("I am Sad");
+            return "sad";
         }else
         {
-            System.out.println("I am Happy");
+            return "happy";
         }
     }
 
