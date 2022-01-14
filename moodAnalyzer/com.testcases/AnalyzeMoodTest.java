@@ -7,7 +7,7 @@ public class AnalyzeMoodTest
     @Test
     public void givenSadInMessage_returnSad()
     {
-        Analyzer newMood = new Analyzer();
+        Analyzer newMood = new Analyzer("I am in sad mood");
         String expectedWord = "sad";
         Assert.assertEquals(expectedWord,newMood.moodAnalyzer());
     }
@@ -15,7 +15,7 @@ public class AnalyzeMoodTest
     @Test
     public void givenHappyInMessage_returnHappy()
     {
-        Analyzer newMood = new Analyzer("I am in any mood");
+        Analyzer newMood = new Analyzer();
         String expectedWord = "happy";
         Assert.assertEquals(expectedWord,newMood.moodAnalyzer());
     }
