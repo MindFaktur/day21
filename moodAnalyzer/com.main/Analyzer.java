@@ -23,10 +23,9 @@ public class Analyzer
             }
         }catch (NullPointerException e)
         {
-            return "happy";
+            return "sad";
         }
 
     }
 }
 
-//
