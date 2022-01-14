@@ -5,7 +5,8 @@ public class Analyzer
 
     public Analyzer(){}
 
-    public Analyzer(String message){
+    public Analyzer(String message)
+    {
         super();
         this.message = message;
     }
@@ -13,15 +14,20 @@ public class Analyzer
     public String moodAnalyzer() throws NullPointerException
     {
         String sadWord = "sad";
-        try{
-            if( message.toLowerCase().contains(sadWord) )
-            {
-                return "sad";
-            }else
-            {
-                return "happy";
-            }
-        }catch (NullPointerException e)
+
+        if( message == null )
+        {
+            throw new MoodAnalysisException("The String is null " + MoodAnalysisErrors.NULL);
+        }
+        if( message.equals("") )
+        {
+            throw new MoodAnalysisException("The String is empty " + MoodAnalysisErrors.EMPTY_STRING);
+        }
+
+        if( message.toLowerCase().contains(sadWord) )
+        {
+            return "sad";
+        }else
         {
             return "happy";
         }
